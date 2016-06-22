@@ -1,4 +1,4 @@
-package pupilapi
+package handler
 
 import "github.com/kataras/iris"
 
@@ -9,5 +9,5 @@ type AuthAPI struct {
 
 //Post Performs the auth
 func (api AuthAPI) Post() {
-	api.Write("FOO=BAR")
+
 }

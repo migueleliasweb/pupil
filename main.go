@@ -2,13 +2,13 @@ package main
 
 import (
 	"os"
-	"pupil/pupilapi"
+	pupilHandler "pupil/handler"
 
 	"github.com/kataras/iris"
 )
 
 func setupMiddlewares() {
-	cacheMW := pupilapi.CacheMiddleware{
+	cacheMW := pupilHandler.CacheMiddleware{
 		ConnectionString: os.Getenv("REDIS_URL"),
 	}
 
@@ -18,6 +18,7 @@ func setupMiddlewares() {
 func main() {
 	setupMiddlewares()
 
-	iris.API("/auth", pupilapi.AuthAPI{})
+	iris.API("/auth", pupilHandler.AuthAPI{})
+
 	iris.Listen(":8080")
 }

@@ -1,4 +1,4 @@
-package pupilapi
+package handler
 
 import (
 	"log"
