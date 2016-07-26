@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 	pupilHandler "pupil/handler"
+	"pupil/util"
 
 	"github.com/kataras/iris"
 )
@@ -23,6 +24,7 @@ func setupJSONError() {
 }
 
 func main() {
+	util.Log("FOO", util.LogLevelDebug)
 	setupMiddlewares()
 	setupJSONError()
 
