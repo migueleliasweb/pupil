@@ -17,7 +17,7 @@ func (mw CacheMiddleware) Serve(ctx *iris.Context) {
 	redisConn, errConn := redis.DialURL(mw.ConnectionString)
 
 	if errConn != nil {
-		log.Println("Could not connect to redis server error: " + errConn.Error())
+		log.Println("Could not connect to redis server error: [ " + errConn.Error() + " ]")
 		return
 	}
 
